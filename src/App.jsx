@@ -1,18 +1,15 @@
 import './App.css'
 import {useState} from "react";
 import ListAccounts from "./ListAccounts.jsx";
+import CreateAccountForm from "./CreateAccountForm.jsx";
 
 function App() {
-
-  const [newAccount, setNewAccount] = useState({
-    accountName: '',
-    startingBalance: '',
-  });
-
+    const [accounts, setAccounts] = useState([])
 
   return (
       <div>
-        <ListAccounts />
+        <ListAccounts accounts={accounts} />
+        <CreateAccountForm setAccounts={setAccounts}/>
       </div>
   )
 }
